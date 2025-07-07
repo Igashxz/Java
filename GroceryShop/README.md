@@ -28,9 +28,13 @@ The project includes the following Java classes:
 How to Run
 
 To run the project:
+
 Step 1: Clone or download the repository
+
 Step 2: Open terminal or command prompt
+
 Step 3: Compile all Java files using the command: javac ShoppingMart.java
+
 Step 4: Run the program using the command: java ShoppingMart
 
 Sample Output
