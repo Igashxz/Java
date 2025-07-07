@@ -7,29 +7,31 @@ This is a simple Java console application for a grocery store billing system. It
 Features
 
 This system allows:
-Category selection of items like Vegetables, Fruits, and Groceries
-Price calculation based on quantity (in kilograms)
-Dynamic bill generation after each purchase
-Display of item name, quantity purchased, and price
-Total bill displayed in both numbers and words (for example, Rs. 175 becomes One Hundred and Seventy Five)
-Display of the date and time using Java's LocalDateTime class
+
+1. Category selection of items like Vegetables, Fruits, and Groceries
+2. Price calculation based on quantity (in kilograms)
+3. Dynamic bill generation after each purchase
+4. Display of item name, quantity purchased, and price
+5. Total bill displayed in both numbers and words (for example, Rs. 175 becomes One Hundred and Seventy Five)
+6. Display of the date and time using Java's LocalDateTime class
 
 Project Structure
 
 The project includes the following Java classes:
-Store.java - Main class that controls user interaction, displays menu, and prints the final bill
-vegetables.java - Contains logic for vegetable selection and pricing
-fruits.java - Contains logic for fruit selection and pricing
-groceries.java - Contains logic for grocery item selection and pricing
-NumberToWords.java - Converts the final numeric bill amount into English words
+
+1. Store.java - Main class that controls user interaction, displays menu, and prints the final bill
+2. vegetables.java - Contains logic for vegetable selection and pricing
+3. fruits.java - Contains logic for fruit selection and pricing
+4. groceries.java - Contains logic for grocery item selection and pricing
+5. NumberToWords.java - Converts the final numeric bill amount into English words
 
 How to Run
 
 To run the project:
 Step 1: Clone or download the repository
 Step 2: Open terminal or command prompt
-Step 3: Compile all Java files using the command: javac Store.java
-Step 4: Run the program using the command: java Store
+Step 3: Compile all Java files using the command: javac ShoppingMart.java
+Step 4: Run the program using the command: java ShoppingMart
 
 Sample Output
 
@@ -56,6 +58,5 @@ Adding more product categories or subcategories
 Introducing discounts, item codes, or taxes
 Saving bills to a text file or database
 
-Author
-
+Author,
 Ashiq Rahman A
