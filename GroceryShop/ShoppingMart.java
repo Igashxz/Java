@@ -10,164 +10,110 @@ class Store {
         System.out.println("3.Groceries");
         //if new options, create here
     }
-
-    public static void main(String args[]) {
+    public static void main(String args[]) 
+    {
         Scanner read = new Scanner(System.in);
         Store copt = new Store();
         Store s = new Store();
-        copt.productlist();
-        System.out.print("Enter an option(Eg.1,2,3): ");
-        int option = read.nextInt();
-        if(option == 1) 
-        {
-            NumberToWords no = new NumberToWords();
-            vegetables veg = new vegetables();
-            veg.vegetableslist();
-            int quantity = veg.quantity; 
-            int productnum =veg.productnum;
-            int price =veg.price;
-            if(productnum==11)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Tomato");
-                System.out.println("Quantity (in Kgs) : " + quantity);
-                System.out.println("Total price       : Rs." + price +"("+no.convert(price)+")");
-                System.out.println("------------------------------");
-                System.out.println("---Thank you! Visit again!---");
-            }
-            else if(productnum==12)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Onion");
-                System.out.println("Quantity (in Kgs) : " + quantity);
-                System.out.println("Total price       : Rs." + price +"("+no.convert(price)+")");
-                System.out.println("------------------------------");
-                System.out.println("---Thank you! Visit again!---");
-            }
-            else if(productnum==13)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Potato");
-                System.out.println("Quantity (in Kgs) : " + quantity);
-                System.out.println("Total price       : Rs." + price +"("+no.convert(price)+")");
-                System.out.println("------------------------------");
-                System.out.println("---Thank you! Visit again!---");
-            }
-        }
-        else if(option==2)
-        {
-            NumberToWords no = new NumberToWords();
-            fruits fru = new fruits();
-            fru.fruitslist();
-            int quantity = fru.quantity; 
-            int productnum =fru.productnum;
-            int price =fru.price;
-            if(productnum==21)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Apple");
-                System.out.println("Quantity (in Kgs) : " + quantity);
-                System.out.println("Total price       : Rs." + price +"("+no.convert(price)+")");
-                System.out.println("------------------------------");
-                System.out.println("---Thank you! Visit again!---");
-            }
-            else if(productnum==22)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Orange");
-                System.out.println("Quantity (in Kgs) : " +quantity);
-                System.out.println("Total price       : Rs." +price);
-                System.out.println("------------------------------");
-            }
-            else if(productnum==23)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Watermelon");
-                System.out.println("Quantity (in Kgs) : " + quantity);
-                System.out.println("Total price       : Rs." + price +"("+no.convert(price)+")");
-                System.out.println("------------------------------");
-                System.out.println("---Thank you! Visit again!---");
+        String[] itemNames = new String[50];
+        int[] itemQuantities = new int[50];
+        int[] itemPrices = new int[50];
+        int itemCount = 0;
+        int finalTotal = 0;
+
+        int more = 1;
+        while (more == 1) {
+            copt.productlist();
+            System.out.print("Enter an option(Eg.1,2,3): ");
+            int option = read.nextInt();
+
+            if(option == 1) {
+                vegetables veg = new vegetables();
+                veg.vegetableslist();
+                int quantity = veg.quantity;
+                int productnum = veg.productnum;
+                int price = veg.price;
+
+                if(productnum == 11) {
+                    itemNames[itemCount] = "Tomato";
+                } else if(productnum == 12) {
+                    itemNames[itemCount] = "Onion";
+                } else if(productnum == 13) {
+                    itemNames[itemCount] = "Potato";
+                }
+                itemQuantities[itemCount] = quantity;
+                itemPrices[itemCount] = price;
+                finalTotal += price;
+                itemCount++;
             }
 
-        }
-        else if(option==3)
-        {
-            NumberToWords no = new NumberToWords();
-            groceries groc = new groceries();
-            groc.grocerieslist();
-            int quantity = groc.quantity; 
-            int productnum =groc.productnum;
-            int price =groc.price;
-            if(productnum==31)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Sugar");
-                System.out.println("Quantity (in Kgs) : " + quantity);
-                System.out.println("Total price       : Rs." + price +"("+no.convert(price)+")");
-                System.out.println("------------------------------");
-                System.out.println("---Thank you! Visit again!---");
-            }
-            else if(productnum==32)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Salt");
-                System.out.println("Quantity (in Kgs) : " + quantity);
-                System.out.println("Total price       : Rs." + price +"("+no.convert(price)+")");
-                System.out.println("------------------------------");
-                System.out.println("---Thank you! Visit again!---");
-            }
-            else if(productnum==33)
-            {
-                System.out.println("");
-                System.out.println("------------------------------");
-                System.out.println("System Genarated Bill: ");
-                System.out.println(LocalDateTime.now());
-                System.out.println("");
-                System.out.println("Item purchased    : Wheat flour");
-                System.out.println("Quantity (in Kgs) : " + quantity);
-                System.out.println("Total price       : Rs." + price +"("+no.convert(price)+")");
-                System.out.println("------------------------------");
-                System.out.println("---Thank you! Visit again!---");
+            else if(option == 2) {
+                fruits fru = new fruits();
+                fru.fruitslist();
+                int quantity = fru.quantity;
+                int productnum = fru.productnum;
+                int price = fru.price;
+
+                if(productnum == 21) {
+                    itemNames[itemCount] = "Apple";
+                } else if(productnum == 22) {
+                    itemNames[itemCount] = "Orange";
+                } else if(productnum == 23) {
+                    itemNames[itemCount] = "Watermelon";
+                }
+                itemQuantities[itemCount] = quantity;
+                itemPrices[itemCount] = price;
+                finalTotal += price;
+                itemCount++;
             }
 
-        }
-        else {
-            System.out.println("XXX INVALID CHOICE XXX");
-        }
-        System.out.println(" ");
+            else if(option == 3) {
+                groceries groc = new groceries();
+                groc.grocerieslist();
+                int quantity = groc.quantity;
+                int productnum = groc.productnum;
+                int price = groc.price;
+
+                if(productnum == 31) {
+                    itemNames[itemCount] = "Sugar";
+                } else if(productnum == 32) {
+                    itemNames[itemCount] = "Salt";
+                } else if(productnum == 33) {
+                    itemNames[itemCount] = "Wheat flour";
+                }
+                itemQuantities[itemCount] = quantity;
+                itemPrices[itemCount] = price;
+                finalTotal += price;
+                itemCount++;
+            }
+
+            else {
+                System.out.println("XXX INVALID CHOICE XXX");
+            }
+
+            System.out.println("");
+            System.out.print("Do you want anything else? Press 1 for Yes / 0 for No: ");
+            more = read.nextInt();
+            System.out.println("");
     }
+    // Display full bill
+    NumberToWords no = new NumberToWords();
+    System.out.println("------------------------------");
+    System.out.println("System Genarated Bill: ");
+    System.out.println(LocalDateTime.now());
+    System.out.println("");
+    for(int i = 0; i < itemCount; i++) {
+        System.out.println("Item purchased    : " + itemNames[i]);
+        System.out.println("Quantity (in Kgs) : " + itemQuantities[i]);
+        System.out.println("Price             : Rs." + itemPrices[i]);
+        System.out.println("------------------------------");
+    }
+    System.out.println("Total Price       : Rs." + finalTotal + " (" + no.convert(finalTotal) + ")");
+    System.out.println("------------------------------");
+    System.out.println("---Thank you! Visit again!---");
+    System.out.println(" ");
+}
+
 }
 class vegetables {
     Scanner gett = new Scanner(System.in);
@@ -327,9 +273,14 @@ class NumberToWords {
             return ones[number];
         } else if (number < 100) {
             return tens[number / 10] + (number % 10 != 0 ? " " + ones[number % 10] : "");
-        } else {
+        } else if (number < 1000) {
             return ones[number / 100] + " Hundred" +
                    (number % 100 != 0 ? " and " + convert(number % 100) : "");
+        } else if (number < 1000000) {
+            return convert(number / 1000) + " Thousand" +
+                   (number % 1000 != 0 ? (number % 1000 < 100 ? " and " : " ") + convert(number % 1000) : "");
+        } else {
+            return "Number too large";
         }
     }
 }
